@@ -1,0 +1,165 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+$body-bg:                    #F1F1F1; 
+$font-family-sans-serif:     'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height:              45px;
+$navbar-default-bg:          #F1F1F1;
+$navbar-default-brand-color: #000099;
+$navbar-default-link-color:  #000099;
+$brand-primary:              #000099;
+$jumbotron-bg:               white;
+
+@import 'bootstrap';
+
+body {
+	font-size: 14px; 
+	background: url('/images/boathouse_row.png') no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+  	overflow-x:hidden;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+
+h4 {
+	font-size: 12px;
+	text-align: center;
+}
+
+h5 {
+	font-size: 12px;
+}
+
+.row { 
+	margin: 0; 
+	padding: 0; 
+}
+
+.container {
+	margin: 0 auto;
+}
+
+.carousel {
+	font-family: Arial;
+	box-shadow: 0px 5px 5px #888888;
+	overflow-x: hidden;
+	z-index:5;
+}
+
+.carousel h1 {
+	font-size: 60px;
+}
+
+.shadow5 {
+  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+}
+
+.contact {
+	margin: 0 auto;
+	background: url('/images/boathouse_row.png');
+}
+
+.jumbotron {
+	margin: 0 auto;
+	background: url('/images/boathouse_row_blue.png') no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+}
+
+.jumbotron p {
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.jumbotron ul {
+	text-align: center; 
+	list-style-type: none;
+	margin: 0 auto;
+}
+
+.jumbotron li {
+	margin: 0 auto;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	display: inline;
+	color: white;
+}
+
+.jumbotron a {
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+.navbar-header {
+	margin: 0 auto;
+	background: none;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar {
+	margin: 0 auto;
+	// background: url('/images/boathouse_row.png') no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+  	background: none;
+}
+
+.navbar li {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.dropdown-menu {
+	-moz-box-shadow:10px 5px 15px rgba(0,0,0,.5); 
+	-webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+	box-shadow: 1px 3px 15px rgba(0,0,0,.5); /*10px is horizontal offset, 5px is vertical offset, 15px is blur radius and rgba(0,0,0,.5) is shadow color*/
+	margin-bottom: 30px;
+}
+
+.dropdown-menu li {
+	margin: 10px;
+}
+
+.login {
+	margin: 0 auto;
+}
+
+.checkbox {
+	padding-left: 40px;
+}
+
+//.container_pins {
+//	background-color: white;
+//}
+
+//.col-md-8 {
+//	background-color: white;
+//}

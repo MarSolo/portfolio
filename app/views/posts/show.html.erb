@@ -1,0 +1,67 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-8">
+    
+  <div class="box panel panel-default">
+    <div class="panel-body">
+    <h2><%= @post.title %></h2>
+        <h5>Posted by <strong><%= @post.admin.name if @post.admin %></strong> on 
+        <%= @post.created_at.strftime("%b %d, %Y") %></h5>
+
+          <div class="center">
+    	       <%= image_tag @post.image.url (:medium) %>
+    	    </div>
+
+    	        <div class="panel-body">
+        	        <%= simple_format @post.text %>
+
+            			<% if current_admin && @post.admin == current_admin %>
+            				<%= link_to edit_post_path(@post) do %>
+            	        	Edit
+            	      		<% end %>
+                        <br>
+                    	<% end %>
+                    		<%= link_to posts_path do %>
+                    		Back
+                    		<% end %>
+    	        </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="col-md-4">
+        <h1>Other News</h1>
+
+          <div id="posts" class="transitions-enabled">
+            <% @posts.each do |post| %>
+              <div class="box panel panel-default">
+                <div class="panel-body">
+                  <div class="actions">
+                    <%= link_to post do %><h2><%= post.title %></h2><% end %>
+                    <h5>Posted by <strong><%= post.admin.name if post.admin %></strong> on 
+                    <%= post.created_at.strftime("%b %d, %Y") %></h5>
+                    <!-- <p><%= link_to image_tag(post.image.url(:medium)), post %><p> -->
+                    <%= link_to post do %><h6>Read More</h6><% end %>
+
+                    <% if current_admin && @post.admin == current_admin %>
+
+                        <%= link_to edit_post_path(post) do %>
+                            Edit
+                        <% end %>
+                            <br>
+                        <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                            Delete
+                        <% end %>
+
+                    <% end %>
+
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+    </div>
+
+</div>
+</div>

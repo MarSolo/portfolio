@@ -1,0 +1,42 @@
+
+
+<h2>Portfolio Gallery:</h2>
+
+<div class="container_pins">
+
+<div id="pins" class="transitions-enabled">
+  <% @pins.each do |pin| %>
+    <div class="box_pin panel panel-default">
+      <%= link_to image_tag(pin.image.url(:medium)), pin %>
+      <div class="panel-body">
+        <strong><%= pin.description %></strong>
+        <h5>category: 
+          <strong>
+            <%= raw pin.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+          </strong>
+        </h5>
+        <% if pin.admin == current_admin %>
+          <div class="actions">
+            <%= link_to edit_pin_path(pin) do %>
+              Edit
+            <% end %>
+            <br>  
+            <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              Delete
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="center">
+  <br>
+  <%= link_to 'Back', pins_path %>
+</div>
+
+</div>
+
+
+

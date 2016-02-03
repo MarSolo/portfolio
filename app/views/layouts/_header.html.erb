@@ -1,0 +1,45 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <div class="container">
+
+<nav class="navbar navbar-static-top navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          Mario Maiale
+        </a>
+      </div>
+
+     <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Bio", about_path %></li>
+        <li><%= link_to "Portfolio", pins_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if admin_signed_in? %> 
+            <li>
+              <%= link_to new_post_path do %>
+                <span class="glyphicon glyphicon-plus"></span> New Post<% end %>
+            </li>
+            <li>
+              <%= link_to new_pin_path do %>
+                <span class="glyphicon glyphicon-plus"></span> New Image<% end %>
+            </li>
+                <li><%= link_to "Account", edit_admin_registration_path %></li>
+                <li><%= link_to "Log Out", destroy_admin_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Log In", new_admin_session_path %></li>
+              <% end %>
+          </ul>
+
+        </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>

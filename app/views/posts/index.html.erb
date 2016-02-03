@@ -1,0 +1,122 @@
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active">
+            <img src="images/power_comiccon.png" alt="carousel" width="100%">
+            <div class="carousel-caption">
+              <h1 class="shadow5">Design</h1>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/web_design.png" alt="carousel" width="100%">
+            <div class="carousel-caption">
+              <h1 class="shadow5">Web Design</h1>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/animation.png" alt="carousel" width="100%">
+            <div class="carousel-caption">
+              <h1 class="shadow5">Animation</h1>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/storyboarding.png" alt="carousel" width="100%">
+            <div class="carousel-caption">
+              <h1 class="shadow5">Storyboarding</h1>
+            </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      
+  </div>
+
+<div class="container">
+<div class="row">
+
+    <div class="col-md-8">
+
+          <div id="posts" class="transitions-enabled">
+            <% @posts.each do |post| %>
+              <div class="box panel panel-default">
+                <div class="panel-body">
+                  <%= link_to post do %><h2><%= post.title %></h2><% end %>
+                    <h5>Posted by <strong><%= post.admin.name if post.admin %></strong> on 
+                    <%= post.created_at.strftime("%b %d, %Y") %></h5>
+                    <%= link_to image_tag(post.image.url(:medium)), post %>
+
+                    <div class="actions">    
+                      <br>
+                        <%= simple_format post.text %>
+                        <% if current_admin && post.admin == current_admin %>
+                        <%= link_to edit_post_path(post) do %>
+                            Edit
+                        <% end %>
+                        <br>
+                        <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                            Delete
+                        <% end %>
+
+                    <% end %>
+
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+        <div class="center">
+          <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+
+      <br>
+
+<a class="twitter-timeline" href="https://twitter.com/mgmaiale" data-widget-id="601893534308966401">Tweets by @mgmaiale</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+      <br>
+      <br>      
+
+          <a class="twitter-timeline" href="https://twitter.com/BH_Pictures" data-widget-id="421485262435127296">Tweets by @BH_Pictures</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <!--Login Controls-->
+            <div class="login">
+              <ul class="nav navbar-nav navbar-justified">
+              <% if admin_signed_in? %>
+                <li>
+                  <%= link_to new_post_path do %>
+                    <span class="glyphicon glyphicon-plus"></span>New Post<% end %>
+                </li>
+                    <li><%= link_to "Account", edit_admin_registration_path %></li>
+                    <li><%= link_to "Log Out", destroy_admin_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to "Log In", new_admin_session_path %></li>
+                  <% end %>
+              </ul>
+            </div>
+    </div>
+  </div>
+
+</div>
+</div>
