@@ -5,22 +5,21 @@ $body-bg:                    #F1F1F1;
 $font-family-sans-serif:     'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-height:              45px;
 $navbar-default-bg:          #F1F1F1;
-$navbar-default-brand-color: #000099;
-$navbar-default-link-color:  #000099;
-$brand-primary:              #000099;
-$jumbotron-bg:               white;
+$navbar-default-brand-color: #FFFFFF;
+$navbar-default-link-color:  #FFFFFF;
+$brand-primary:              #FFFFFF;
 
 @import 'bootstrap';
 
 body {
 	font-size: 14px; 
-	background: url('/images/boathouse_row.png') no-repeat center center fixed; 
+	//background: url('/images/promo_image_v2.jpg') no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
 
-  	overflow-x:hidden;
+  	overflow-x: hidden;
 }
 
 h1 {
@@ -58,7 +57,7 @@ h5 {
 	font-family: Arial;
 	box-shadow: 0px 5px 5px #888888;
 	overflow-x: hidden;
-	z-index:5;
+	z-index: 5;
 }
 
 .carousel h1 {
@@ -120,6 +119,7 @@ h5 {
 
 .navbar-brand {
     font-weight: bold;
+    color: white;
 }
 
 .navbar {
