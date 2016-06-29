@@ -4,10 +4,9 @@
 $body-bg:                    #F1F1F1; 
 $font-family-sans-serif:     'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-height:              45px;
-$navbar-default-bg:          #F1F1F1;
-$navbar-default-brand-color: #FFFFFF;
-$navbar-default-link-color:  #FFFFFF;
-$brand-primary:              #FFFFFF;
+$navbar-default-brand-color: #00aced;
+$navbar-default-link-color:  #00aced;
+$brand-primary:              #00aced;
 
 @import 'bootstrap';
 
@@ -24,10 +23,18 @@ body {
 
 h1 {
 	font-size: 30px;
+	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 
+	'Lucida Typewriter', monospace;
+	font-weight: bold;
 }
 
 h2 {
-	font-size: 20px;
+	font-size: 30px;
+	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 
+	'Lucida Typewriter', monospace;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: -20px;
 }
 
 h3 {
@@ -134,7 +141,9 @@ h5 {
 }
 
 .navbar li {
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family:  'Courier New', Courier, 'Lucida Sans Typewriter', 
+	'Lucida Typewriter', monospace;
+	font-size: 18px;
 }
 
 .dropdown-menu {
