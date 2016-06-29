@@ -3,10 +3,9 @@
 
 $body-bg:                    #F1F1F1; 
 $font-family-sans-serif:     'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:              45px;
-$navbar-default-brand-color: #00aced;
-$navbar-default-link-color:  #00aced;
-$brand-primary:              #00aced;
+$navbar-height:              60px;
+$navbar-default-brand-color: #000000;
+$brand-primary:              #000000;
 
 @import 'bootstrap';
 
@@ -120,7 +119,7 @@ h5 {
 }
 
 .navbar-header {
-	margin: 0 auto;
+	margin-top: -10px;
 	background: none;
 }
 
